@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+  <title>交易查询</title>
+<link rel="stylesheet" href="assets/paysearch/css/weui.min.css">
+<link rel="stylesheet" href="assets/paysearch/css/jquery-weui.min.css">
+<link rel="stylesheet" href="assets/paysearch/css/paysearch.css">
+<script src="assets/paysearch/js/jquery.min.js"></script>
+<script src="assets/paysearch/js/ipaysoondef.js"></script><!-- application script for ipaysoon -->
+<script>
+    // loading
+    document.onreadystatechange= function(){
+      if(document.readyState=='complete'){
+        $('.loadingimg').fadeOut();
+      }
+    }   
+</script>
+<style>
+.listcontain .errinfo{
+  margin-top: 150px;
+  text-align: center;
+  font-size: 14px;
+  display: none;
+}
+</style>
+</head>
+<body ontouchstart="">  
+  <!-- loading  img -->
+  <div class="loadingimg"><!-- loadimg -->
+    <div class="pic"></div>
+  </div>
+  <!-- loading progress -->
+  <div class="loadingtop"><!-- loadingtop -->
+    <div class="pic"></div>
+  </div>
+   <!-- %0 -->
+   <script>
+    $('.loadingtop .pic').animate({width:'0%'},100);
+  </script> 
+  <!-- header -->
+  <div id="header">
+    <a href="javascript:;"><img src="img/close.png" alt="" ></a>
+    <span id="filter" class="open-popup" data-target="#paybuttons">筛选</span>
+  </div>
+   <!-- %20 -->
+   <script>
+    $('.loadingtop .pic').animate({width:'20%'},100);
+  </script>
+  <!-- contian -->
+  <div  class="contain  weui-pull-to-refresh">
+    <!-- 下拉 -->
+    <div class="weui-pull-to-refresh__layer" >
+      <div class="weui-pull-to-refresh__arrow"></div>
+      <div class="weui-pull-to-refresh__preloader"></div>
+      <div class="down">下拉刷新</div>
+      <div class="up">释放刷新</div>
+      <div class="refresh">正在刷新</div>
+    </div>
+   <!-- datachoice -->
+   <div class="datachoice">
+      <div class="totalInfo">
+          <h2>2017年7月</h2>
+         <!--  <p><label for="">支出</label><span>$874.55</span>
+           <label for="">收入</label><span>$0.00</span></p> -->
+      </div>
+      <img src="img/datachoice.png" alt="" >
+   </div>
+    <!-- %45 -->
+   <script>
+    $('.loadingtop .pic').animate({width:'45%'},100);
+  </script>
+   <!-- paylist -->
+   <div  class="listcontain">
+      <ul>
+        <li>
+            <img src="img/modyicon.png" alt="">
+            <hgroup>
+              <h3>二维码首款-装给梦在心中...</h3>
+              <p>7月19日 3:02</p>
+              <p>通道交易成功</p>
+            </hgroup>
+            <span>-8.00</span>
+          </li> 
+            <li>
+            <img src="img/modyicon.png" alt="">
+            <hgroup>
+              <h3>二维码首款-装给梦在心中...</h3>
+              <p>7月19日 3:02</p>
+              <p>通道交易成功</p>
+            </hgroup>
+            <span>-8.00</span>
+          </li> 
+            <li>
+            <img src="img/modyicon.png" alt="">
+            <hgroup>
+              <h3>二维码首款-装给梦在心中...</h3>
+              <p>7月19日 3:02</p>
+              <p>通道交易成功</p>
+            </hgroup>
+            <span>-8.00</span>
+          </li> 
+            <li>
+            <img src="img/modyicon.png" alt="">
+            <hgroup>
+              <h3>二维码首款-装给梦在心中...</h3>
+              <p>7月19日 3:02</p>
+              <p>通道交易成功</p>
+            </hgroup>
+            <span>-8.00</span>
+          </li> 
+            <li>
+            <img src="img/modyicon.png" alt="">
+            <hgroup>
+              <h3>二维码首款-装给梦在心中...</h3>
+              <p>7月19日 3:02</p>
+              <p>通道交易成功</p>
+            </hgroup>
+            <span>-8.00</span>
+          </li> 
+      </ul>
+        <p class="errinfo"></p>
+   </div>
+
+   <div class="weui-loadmore">
+        <i class="weui-loading"></i>
+        <span class="weui-loadmore__tips">正在加载</span>
+    </div>
+  </div>
+ <!--button  -->
+    <div id="paybuttons" class="weui-popup__container popup-bottom">
+      <div class="weui-popup__overlay"></div>
+      <div class="weui-popup__modal">
+        <div class="modalcontain">
+          <div class="toolbar-title">           
+            <h2 >选择交易类型</h2>
+          </div>
+          <div class="buttoncontan" >       
+           <button class="close-popup">支付宝支付</button>
+               <button class="close-popup">支付宝支付</button>
+                   <button class="close-popup">支付宝支付</button>
+                       <button class="close-popup">支付宝支付</button>
+                           <button class="close-popup">支付宝支付</button>
+                               <button class="close-popup">支付宝支付</button>
+                                   <button class="close-popup">支付宝支付</button>
+                                       <button class="close-popup">支付宝支付</button>
+          </div>
+           <a href="javascript:;" class="weui-btn close-popup ">取消</a>
+        </div>
+      </div>
+    </div>
+    <!-- %80 -->
+   <script>
+    $('.loadingtop .pic').animate({width:'80%'},100);
+  </script>
+   <!-- datechocie -->
+  <div class="datachice"><!-- 弹框日期选择 input-->
+    <div class="headertitle">
+      <h3></h3>
+        <p> <label for="">开始:</label> <input  id="startTime"  data-toggle='date'>
+       <label for="">结束:</label><input  id="endTime" value=""> </p> 
+      <div class="choice">
+        <button id="timeSure">确定</button>
+        <button id="timeCancul">取消</button>
+      </div>   
+    </div>
+  </div>
+  <div class="mark"></div>
+   <!-- detailone -->
+    <div class="detail">
+      <div class="detailHead">
+      <h2></h2>
+     </div>
+    <div class="detailCon">       
+        <table width="100%" cellspacing="0" cellpadding="0" class="detailTab">
+        <thead style="border-bottom: 1px solid #ccc;">
+          <tr>
+            <td  style="font-size: 16px;">付款金额</td>
+            <td  class="detailmony texalirig ">4.77元</td>
+          </tr>
+        </thead>
+            <tr>
+              <td width="35%">&nbsp;</td>
+              <td width="65%">&nbsp;</td>
+            </tr>
+            <tr>
+              <td >终端订单号:</td>
+              <td  class="texalirig"></td>
+            </tr>
+             <tr>
+              <td >平台订单号：</td>
+              <td class="texalirig">000000088</td>
+            </tr>
+             <tr>
+              <td >交易类型：</td>
+              <td  class="texalirig">000000088</td>
+            </tr> 
+             <tr>
+              <td >交易内容</td>
+              <td class="texalirig">000000088</td>
+            </tr>   
+            <tr>
+              <td >交易金额(元)</td>
+              <td  class="texalirig">000000088</td>
+            </tr>
+             <tr>
+              <td >手续费：</td>
+              <td class="texalirig">000000088</td>
+            </tr>   
+             <tr>
+              <td >状态：</td>
+              <td class="texalirig">000000088</td>
+            </tr>   
+            <tr>
+              <td >返回信息：</td>
+              <td class="texalirig">000000088</td>
+            </tr>   
+             <tr>
+              <td >交易</td>
+              <td class="texalirig">000000088</td>
+            </tr>         
+        </table>  
+    </div> 
+
+   <!-- %100 -->
+  <script>
+    $('.loadingtop .pic').animate({width:'100%'},100,function(){
+      $('.loadingtop').fadeOut();
+    });
+  </script>
+ <script src="js/jquery-weui.min.js"></script>
+ <!-- 解决延迟 -->
+  <!--  <script>
+  $(function() {
+    FastClick.attach(document.body);
+  });
+  </script>
+  <script src="../js/jquery-weui.js"></script> -->
+ <script>  
+           //返回的还是10
+           //初次加载默认显示一个月 ********
+           //点击事件
+           //判断到底部
+           //向下滑动多次报错
+           //列表倒叙
+           //筛选连续点击
+           //交易类型没有的提示
+           //时间请求失败提示
+          
+    $(function(){
+      // // 判断是否显示loading
+      //  if($('.listcontain li').size()<5){
+      //   $('.weui-loadmore').css('display','none');
+      //  }
+      //  // 当内容为空时 提示
+      //   if($('.listcontain li').size()==0){
+      //     $('.weui-loadmore').css('display','none');
+      //     $('.errinfo').css('display','block');
+      //     $('.errinfo').html('没有更多内容');
+      //  }
+            //ajax
+             //  var resultjson;//请求返回的json
+             //  var detailJson;//所有list集合数组
+             //  var num =1;//默认页码
+             //  var pageNum =num.toString();
+             //  var pageSize = 6//默认一页个数
+             //  var pageCount = pageSize.toString();
+             //  // var merchant_code = sessionStorage.MERCHANT_CODE;
+             //   // var merchant_code ;//没有登录时的测试
+             //  var merchant_code ='EDARIFNX';//登录后测试
+             //  var businessCode =''//默认交易类型
+
+             // function ajaxFun(ajaxUrl,ajaxData){
+             //      $.ajax({
+             //          type:'post',
+             //          url:ajaxUrl, 
+             //          async:false,
+             //          cache:false,
+             //          data:{  
+             //            request:JSON.stringify(ajaxData)
+             //          },
+             //          dataType:'text',
+             //          success:function(result){     
+             //             if (result!=null && result!=""){  
+             //                      resultjson = JSON.parse(result);
+             //                   }else{
+             //                     alert('失败 \n '+result);
+
+             //                   }
+             //              },
+             //          error:function(){
+             //            alert("请求失败");
+             //          }
+             //          });
+             //    }
+    // 当没有登录时
+      // if(!merchant_code){
+      //    $('.weui-loadmore').css('display','none');
+      //     $('.errinfo').css('display','block');
+      //     $('.errinfo').html('请先登录再查询');
+
+      // }else{
+      //   var requestStr={"merchantCode":"EDARIFNX","businessCode":businessCode,"statusId":"","pageNo":pageNum,"pageSize":pageCount,"fromDate":"20170701000000","toDate":"20170728235959"};
+      //          ajaxFun('deal/getMerchantDealList.js',requestStr);             
+      //          if(resultjson&&resultjson.resultCode =='0000'){
+      //             var sum =resultjson.totalNo;  
+      //             detailJson = resultjson.detail; //初始的详情集合数组
+      //             $(detailJson).each(function(index){ 
+      //               // console.log(1);
+      //               //  console.log(detailJson[index].dealTypeId);
+      //             // 增加的li标签
+      //              var htmlLi =$("<li><img src='img/modyicon.png' ><hgroup> <h3> "+this.purpose+"</h3><p>"+formatDateTime(this.generatedDate)+"</p><p>"+formatStatus(this.statusId)+"</p></hgroup><span>"+-((this.amount)/100).toFixed(2)+"</span></li>");
+                  
+      //               $('.listcontain ul').append(htmlLi);                  
+      //             });                           
+      //         }else{
+      //           $('.errinfo').html('服务器繁忙');
+      //         } 
+      // }
+     function getNowFormatDate() {
+          var date = new Date();
+          var seperator1 = "-";
+          var seperator2 = ":";
+          var month = date.getMonth() + 1;
+          var strDate = date.getDate();
+          if (month >= 1 && month <= 9) {
+              month = "0" + month;
+          }
+          if (strDate >= 0 && strDate <= 9) {
+              strDate = "0" + strDate;
+          }
+          var currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate;                 
+          return currentdate;          
+      }
+      $('.totalInfo h2').html(getNowFormatDate());
+      $('.headertitle h3').html(getNowFormatDate());
+     
+       // 日期滚动显示
+        var h3Time;
+        var outerScroller = document.querySelector('.contain');
+        var touchStart = 0;      
+        outerScroller.addEventListener('touchstart', function(event) { 
+               var touch = event.targetTouches[0]; 
+            // 把元素放在手指所在的位置 
+             touchStart = touch.pageY; 
+            //事件对象
+            var target = event.target;
+            while(target.nodeName != 'LI' && target.nodeName != 'BODY'){
+               target = target.parentNode;
+            }
+             //时间根据手指位置显示 
+              h3Time = $(target).find('p:eq(0)').html().substring(0,10);   
+          }, false);
+            outerScroller.addEventListener('touchmove', function(event) {               
+               $('.datachoice').css('position','absolute'); 
+
+          }, false);
+           outerScroller.addEventListener('touchend', function(event) { 
+                 $('.totalInfo h2').html(h3Time); 
+                touchStart = 0;
+               $('.datachoice').css('position','fixed');    
+      }, false);
+    
+      //up刷新
+      $('.contain').pullToRefresh().on("pull-to-refresh", function() { 
+        setTimeout(function() { 
+           // var requestStr={"merchantCode":"EDARIFNX","businessCode":businessCode,"statusId":"","pageNo":pageNum,"pageSize":pageCount,"fromDate":"20170701000000","toDate":"20170728235959"};
+           //     ajaxFun('deal/getMerchantDealList2.js',requestStr);             
+           //     if(resultjson&&resultjson.resultCode =='0000'){
+           //        detailJson = resultjson.detail; //up改变初始集合数组
+           //       $('.listcontain ul').html('');               
+           //        $(detailJson).each(function(index){ 
+           //        // 增加的li标签
+           //         var htmlLi =$("<li><img src='img/modyicon.png' ><hgroup> <h3> "+this.purpose+"</h3><p>"+formatDateTime(this.generatedDate)+"</p><p>"+formatStatus(this.statusId)+"</p></hgroup><span>"+-((this.amount)/100).toFixed(2)+"</span></li>");
+           //          $('.listcontain ul').append(htmlLi);                  
+           //        });                                          
+           //    }
+           //    console.log(detailJson);
+
+           $('.contain').pullToRefreshDone();
+        }, 2000);
+      });
+        // down
+        var loading = false;  //状态标记  
+        $('.contain').infinite().on("infinite", function() { 
+
+            if(loading) return;  
+            loading = true;  
+            setTimeout(function() {  
+                 // 增加的li标签
+                   var htmlLidown =$("<li><img src='img/modyicon.png' ><hgroup> <h3> "+this.purpose+"</h3><p>"+formatDateTime(this.generatedDate)+"</p><p>"+formatStatus(this.statusId)+"</p></hgroup><span>"+-((this.amount)/100).toFixed(2)+"</span></li>");
+                       $('.listcontain ul').append(htmlLidown);         
+             
+                loading = false;  
+            }, 1000);   //模拟延迟  
+          //downdetail
+        }); 
+     //交易类型
+      $('#filter').get(0).addEventListener('click',function(ev){        
+        ev.preventDefault();
+        (function(){
+          // type 添加button
+          var requestStr = {                  
+                  merchantCode:merchant_code
+            };
+           ajaxFun('business/getMerchantRegistrationBusiness',requestStr);  
+        if(resultjson&&resultjson.resultCode =='0000'){
+          $(resultjson.detail).each(function(index){
+            var htmlBtn =$("<button value='"+this.code+"'>"+this.name+"</button>"); 
+            $('.buttoncontan').append(htmlBtn);        
+          });
+        }
+        })();
+        //btn设置bussinscode
+         var $searchBtn = $('.buttoncontan').children('button');
+           $searchBtn.on('click',function(){
+            $(this).addClass('close-popup'); 
+                  if($(this).val()==0){
+                  business_code="";
+                  return; 
+                } 
+                else{
+                  business_code=$(this).val();
+                } 
+           });
+           // 点击按钮发送请求
+            $('.buttoncontan').delegate($searchBtn,'click',function(index){
+                var requestStr={"merchantCode":"EDARIFNX","businessCode":businessCode,"statusId":"","pageNo":pageNum,"pageSize":pageCount,"fromDate":"20170701000000","toDate":"20170728235959"};
+               ajaxFun('deal/getMerchantDealList.js',requestStr);             
+               if(resultjson&&resultjson.resultCode =='0000'){
+                $('.listcontain ul').html('');
+                  detailJson = resultjson.detail; //初始的按钮集合数组
+                  $(detailJson).each(function(index){ 
+                  // 增加的li标签
+                   var htmlLi =$("<li><img src='img/modyicon.png' ><hgroup> <h3> "+this.purpose+"</h3><p>"+formatDateTime(this.generatedDate)+"</p><p>"+formatStatus(this.statusId)+"</p></hgroup><span>"+-((this.amount)/100).toFixed(2)+"</span></li>");
+                  
+                    $('.listcontain ul').append(htmlLi);                  
+                  });                           
+              } 
+            });
+      });
+      // 时间发送请求
+      // 默认时间
+          $('#startTime').val(getNowFormatDate());
+          $('#endTime').val(getNowFormatDate());
+       $('#timeSure').on('click',function(){
+          var startTime =$('#startTime').val().replace(/-/g,"")+"000000";
+          var endTime= $('#endTime').val().replace(/-/g,"")+"235959";
+             var requestStr={"merchantCode":"EDARIFNX","businessCode":businessCode,"statusId":"","pageNo":pageNum,"pageSize":pageCount,"fromDate":startTime,"toDate":endTime};
+               ajaxFun('deal/getMerchantDealList.js',requestStr);             
+               if(resultjson&&resultjson.resultCode =='0000'){
+                $('.listcontain ul').html('');
+                  detailJson = resultjson.detail; //初始的时间集合数组
+                  $(detailJson).each(function(index){ 
+                  // 增加的li标签
+                   var htmlLi =$("<li><img src='img/modyicon.png' ><hgroup> <h3> "+this.purpose+"</h3><p>"+formatDateTime(this.generatedDate)+"</p><p>"+formatStatus(this.statusId)+"</p></hgroup><span>"+-((this.amount)/100).toFixed(2)+"</span></li>");
+                    $('.listcontain ul').append(htmlLi);                  
+                  });                           
+              }
+       });
+        //detail
+        $('.listcontain').delegate('li','click',function(index){
+          $('.detail').css('display','block');
+          $('#filter').css('display','none');
+          // x
+          $('#header img').click(function(){
+            $('.detail').css('display','none');
+            $('#filter').css('display','block');
+          });
+          // detail
+          var idx = $(this).index();
+
+          $('.detailHead h2').html(formatDealType(detailJson[idx].dealTypeId));
+          $('.detailCon tr:first').children('td:eq(1)').html((detailJson[idx].amount/100).toFixed(2));
+          $('.detailCon tr:eq(2)').children('td:eq(1)').html(detailJson[idx].merchantGenCode);
+         $('.detailCon tr:eq(3)').children('td:eq(1)').html(detailJson[idx].dealCode);
+         $('.detailCon tr:eq(4)').children('td:eq(1)').html(formatDealType(detailJson[idx].dealTypeId));
+         $('.detailCon tr:eq(5)').children('td:eq(1)').html(detailJson[idx].purpose);
+         $('.detailCon tr:eq(6)').children('td:eq(1)').html((detailJson[idx].amount/100).toFixed(2));
+         $('.detailCon tr:eq(7)').children('td:eq(1)').html((detailJson[idx].charge/100).toFixed(2));
+         $('.detailCon tr:eq(8)').children('td:eq(1)').html(formatStatus(detailJson[idx].statusId));
+          // $('.detailCon tr:eq(8)').children('td:eq(1)').html(detailJson[idx].merchantName);
+          $('.detailCon tr:eq(9)').children('td:eq(1)').html(detailJson[idx].merchantName);
+          $('.detailCon tr:eq(10)').children('td:eq(1)').html(formatDateTime(detailJson[idx].generatedDate));
+     }); 
+          // 日历
+       $("#startTime").calendar();
+       $("#endTime").calendar(); 
+       // 日期
+       $('.datachoice img').click(function(){
+           $('.datachice').css('display','block');
+           $('.mark').css('display','block');
+            $('#timeCancul').click(function(){
+                 $('.datachice').css('display','none');
+                 $('.mark').css('display','none');
+           });
+             $('#timeSure').click(function(){
+                 $('.datachice').css('display','none');
+                 $('.mark').css('display','none');
+            });
+              $('.mark').click(function(){
+                 $('.datachice').css('display','none');
+                 $('.mark').css('display','none');
+            });
+            
+       });
+
+    });  
+
+</script>
+</body>
+</html>
